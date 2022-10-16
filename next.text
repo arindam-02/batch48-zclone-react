@@ -1,0 +1,48 @@
+
+#mealtype
+{
+
+        content: "Start your day with exclusive lunch options"
+        image: "assets/lunch.jpg"
+        meal_type :2
+        name: "Lunch"
+        _id: "632f92a2e481e79ba0f86ec1"
+}
+
+#location
+{
+        city: "Delhi"
+        city_id: 1
+        country_name: "India"
+        location_id: 1
+        name: "Shalimar Bagh"
+        _id: "632f8d9ae481e79ba0f86eb8
+}
+
+#restaurantdata--filter
+{
+        city:"Delhi"
+        cuisine:(2) [{…}, {…}]
+        image:"assets/breakfast.png"
+        locality:"Shalimar Bagh"
+        min_price:333
+        name:"KFC"
+        _id:"632f8a60e481e79ba0f86eb2"
+}
+
+
+aggregate_rating:0
+city: ""
+city_id:-1
+contact_number:0
+cuisine:  []
+cuisine_id: []
+image: ""
+locality: ""
+location_id:-1
+mealtype_id:-1
+min_price: 0
+name: ""
+rating_text: ""
+thumb: []
+_id: -1

@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.main-section {
+  background-color: rgb(29, 19, 19);
+  height: 65vh;
+  background-image: url("./img/main-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header {
+  background: transparent;
+}
+.brand-logo {
+  color: darkslategrey;
+  height: 150px;
+  width: 150px;
+  /* border: 2px solid red; */
+  border-radius: 50%;
+  background-color: white;
+  padding: 30px;
+  font-weight: bolder;
+  font-size: 5rem;
+}
+
+.title {
+  font-size: 3rem;
+}
+/* .quick-search-area{
+  background-color: antiquewhite;
+} */
+
+.quick-search-item {
+  /* border: 1px solid grey; */
+  box-shadow: 10px 8px 25px grey;
+  width: 30%;
+  height: 45%;
+}
+
+.quick-search-item:hover {
+  cursor: pointer;
+  box-shadow: 10px 8px 10px grey;
+}
+.search-item-img {
+  width: 150px;
+  height: 160px;
+}
+/* .item-description{
+  
+} */
+.navy {
+  color: #192f60;
+}
+/* ================================ */
+/* QuickSearch */
+.brand {
+  background-color: white;
+  color: darkslategrey;
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-left: 10px;
+}
+.search-page-title {
+  font-size: 3rem;
+}
+.form-check-input {
+  margin: 10px;
+}
+/* .search-result-area {
+  border: 3px solid black;
+} */
+.search-area {
+  display: flex;
+}
+/* 
+.collapse-btn {
+  display: none;
+} */
+.food-item-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 14px;
+}
+.pageignition ul li {
+  list-style: none;
+  /* border: 2px solid blue; */
+  border-radius: 10px;
+  margin: 12px;
+  padding: 15px;
+  font-weight: bold;
+  color: grey;
+  /* background-color: darkgray; */
+  box-shadow: 4px 5px 12px grey;
+  cursor: pointer;
+}
+/* ================================ */
+/* ========= bootstrap-restaurant-page ============= */
+.restaurant-background {
+  height: 60vh;
+  overflow: hidden;
+}
+
+.restaurant-background img {
+  height: 150%;
+  width: 100%;
+}
+
+.btn-gallery {
+  top: 90%;
+  right: 5%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(223, 215, 215, 0.856);
+  color: black;
+  font-weight: bold;
+}
+.hand {
+  cursor: pointer;
+}
+/* ================================ */
+
+/* menu item  */
+.menu-food-item {
+  width: 90px;
+  height: 90px;
+  background-color: #192f60;
+  position: relative;
+}
+.menu-food-item .add {
+  position: absolute;
+  left: 25%;
+  bottom: -20%;
+}
+.menu-food-item img {
+  width: 100%;
+  height: 100%;
+}
+.menu-food-item .order-item-count {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -20%;
+}
+.menu-food-item .order-item-count span {
+  background-color: white;
+  padding: 2px 5px;
+  border: 2px solid gray;
+  margin: 0 1px;
+}
+/* =============================== */
+
+/* Iphone SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .header {
+    display: none;
+  }
+  .brand-logo {
+    height: 80px;
+    width: 80px;
+    margin: 30px;
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 2rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .search-area {
+    padding: 0;
+  }
+
+  .search {
+    /* display: flex; */
+    flex-direction: column;
+    width: 80% !important;
+  }
+  .location-search {
+    width: 100% !important;
+    padding: 0 0;
+    margin-bottom: 12px;
+  }
+  /* .collapse-btn {
+    display: block;
+  } */
+  .quick-search-title {
+    font-size: 1.2rem;
+  }
+  .quick-search-subtitle {
+    font-size: small !important;
+  }
+  .quick-search-item {
+    width: 100%;
+    height: 15%;
+  }
+
+  /* ========================================= */
+
+  .search-area {
+    display: flex;
+    flex-direction: column;
+  }
+  .search-page-title {
+    font-size: 1.3rem;
+  }
+
+  .pageignition ul li {
+    border-radius: 10px;
+    margin: 8px;
+    padding: 4px;
+  }
+  /* ======================================== */
+}
