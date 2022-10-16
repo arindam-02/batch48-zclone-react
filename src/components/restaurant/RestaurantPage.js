@@ -46,7 +46,9 @@ function RestaurantPage() {
 
   let getRestDetail = async () => {
     try {
-      let URL = "http://localhost:5003/api/get-rest-details-by-id/" + id;
+      let URL =
+        "https://batch48-zclone-api-app.herokuapp.com/api/get-rest-details-by-id/" +
+        id;
 
       let { data } = await axios.get(URL);
       if (data.status === true) {
@@ -61,7 +63,9 @@ function RestaurantPage() {
 
   let getMenuItems = async () => {
     try {
-      let URL = "http://localhost:5003/api/get-menu-items-by-rest-id/" + id;
+      let URL =
+        "https://batch48-zclone-api-app.herokuapp.com/api/get-menu-items-by-rest-id/" +
+        id;
       let { data } = await axios.get(URL);
       if (data.status === true) {
         setMenuItems([...data.result]);
@@ -115,7 +119,7 @@ function RestaurantPage() {
       amount: totalPrice,
     };
     let { data } = await axios.post(
-      "http://localhost:5003/api/payment/gen-order",
+      "https://batch48-zclone-api-app.herokuapp.com/api/payment/gen-order",
       serverData
     );
     var order = data.order;
@@ -136,7 +140,7 @@ function RestaurantPage() {
           razorpay_signature: response.razorpay_signature,
         };
         var { data } = await axios.post(
-          "http://localhost:5003/api/payment/verify",
+          "https://batch48-zclone-api-app.herokuapp.com/api/payment/verify",
           sendData
         );
 

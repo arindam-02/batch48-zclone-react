@@ -9,7 +9,9 @@ function Wallpaper() {
   let [disabled, setDisabled] = useState(true);
   let getLocationList = async () => {
     try {
-      let response = await axios.get("http://localhost:5003/api/get-loc-list");
+      let response = await axios.get(
+        "https://batch48-zclone-api-app.herokuapp.com/api/get-loc-list"
+      );
 
       let data = response.data;
       if (data.status === true) {
@@ -28,7 +30,9 @@ function Wallpaper() {
     // console.log(value);
     if (value !== "") {
       try {
-        let url = "http://localhost:5003/api/get-rest-by-loc-id/" + value;
+        let url =
+          "https://batch48-zclone-api-app.herokuapp.com/api/get-rest-by-loc-id/" +
+          value;
         let { data } = await axios.get(url);
 
         if (data.status === true) {

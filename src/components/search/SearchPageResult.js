@@ -11,7 +11,9 @@ function SearchPageResult() {
 
   let getLocationList = async () => {
     try {
-      let response = await axios.get("http://localhost:5003/api/get-loc-list");
+      let response = await axios.get(
+        "https://batch48-zclone-api-app.herokuapp.com/api/get-loc-list"
+      );
       let data = response.data;
       if (data.status === true) {
         setLocationList([...data.result]); //recreating the array
@@ -29,7 +31,7 @@ function SearchPageResult() {
   // console.log(meal_id);
 
   let filterOperation = async (filter) => {
-    let URL = "http://localhost:5003/api/filter";
+    let URL = "https://batch48-zclone-api-app.herokuapp.com/api/filter";
     // let filter = {
     //   meal_type: meal_id,
     // };
