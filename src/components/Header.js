@@ -30,7 +30,7 @@ function Header(props) {
       "You Have Logged In Successfully !!",
       "success"
     ).then(() => {
-      window.location.reload();
+      window.location.assign("/");
     });
   };
   let onerror = () => {
@@ -53,7 +53,7 @@ function Header(props) {
     }).then((result) => {
       if (result.isConfirmed) {
         localStorage.removeItem("auth-token");
-        window.location.reload();
+        window.location.assign("/");
       }
     });
 
