@@ -122,6 +122,9 @@ function Header(props) {
                 >
                   Login
                 </button>
+                <button className="btn border border-light text-white fw-bold">
+                  Create an account
+                </button>
               </div>
             )}
           </header>
