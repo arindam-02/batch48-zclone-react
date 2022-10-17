@@ -4,6 +4,8 @@ import Header from "../Header";
 import { useParams } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import Swal from "sweetalert2";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 function RestaurantPage() {
   let [tab, setTab] = useState(1);
@@ -174,6 +176,62 @@ function RestaurantPage() {
   }, []);
   return (
     <>
+      {/* <!-- Modal --> */}
+      <div
+        class="modal fade"
+        id="slideShow"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <div class="modal-body  pt-5" style={{ height: "50vh" }}>
+              <Carousel infiniteLoop={true}>
+                {restaurant.thumb.map((value, index) => {
+                  return (
+                    <div key={index} className="w-100 ">
+                      <img src={"/images/" + value} />
+                    </div>
+                  );
+                })}
+              </Carousel>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div
+        className="modal fade"
+        id="slideShow"
+        aria-hidden="true"
+        aria-labelledby="exampleModalToggleLabel"
+        tabIndex="-1"
+      >
+        <div className="modal-dialog modal-lg" style={{ height: "75vh" }}>
+          <div className="modal-content">
+            <div className="modal-body h-75">
+              <Carousel showThumbs={false} infiniteLoop={true}>
+                {restaurant.thumb.map((value, index) => {
+                  return (
+                    <div key={index} className="w-100">
+                      <img src={"/image/" + value} alt="" />;
+                    </div>
+                  );
+                })}
+              </Carousel>
+            </div>
+          </div>
+        </div>
+      </div> */}
       <div
         className="modal fade"
         id="exampleModalToggle"
@@ -337,7 +395,11 @@ function RestaurantPage() {
       <section className="row justify-content-center ">
         <section className="col-10 restaurant-background position-relative">
           <img src={"/images/" + restaurant.image} alt="" />
-          <button className="btn-gallery position-absolute">
+          <button
+            className="btn-gallery position-absolute"
+            data-bs-toggle="modal"
+            data-bs-target="#slideShow"
+          >
             Click to see Image Gallery
           </button>
         </section>
