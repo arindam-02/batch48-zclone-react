@@ -30,7 +30,7 @@ function Header(props) {
       "You Have Logged In Successfully !!",
       "success"
     ).then(() => {
-      window.location.reload(true);
+      window.location.reload(false);
     });
   };
   let onerror = () => {
