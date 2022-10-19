@@ -8,6 +8,7 @@ function SearchPageResult() {
   let [restaurantList, setRestaurantList] = useState([]);
   let [locationList, setLocationList] = useState([]);
   let [filter, setFilter] = useState({ meal_type: meal_id });
+  let [currentPage, setCurrentPage] = useState(1);
 
   let getLocationList = async () => {
     try {
@@ -81,6 +82,12 @@ function SearchPageResult() {
         // console.log(costForTwo);
         _filter["lcost"] = Number(costForTwo[0]);
         _filter["hcost"] = Number(costForTwo[1]);
+        break;
+
+      case "page":
+        _filter["page"] = Number(value);
+        setCurrentPage(value);
+
         break;
 
       default:
@@ -374,12 +381,40 @@ function SearchPageResult() {
 
               <div className="pageignition">
                 <ul className="d-flex">
-                  <li className="fa fa-angle-left" />
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>4</li>
-                  <li className="fa fa-angle-right" />
+                  <li
+                    value={currentPage - 1}
+                    onClick={(event) => makeFiltration(event, "page")}
+                    className="fa fa-angle-left"
+                  />
+                  <li
+                    value="1"
+                    onClick={(event) => makeFiltration(event, "page")}
+                  >
+                    1
+                  </li>
+                  <li
+                    value="2"
+                    onClick={(event) => makeFiltration(event, "page")}
+                  >
+                    2
+                  </li>
+                  <li
+                    value="3"
+                    onClick={(event) => makeFiltration(event, "page")}
+                  >
+                    3
+                  </li>
+                  <li
+                    value="4"
+                    onClick={(event) => makeFiltration(event, "page")}
+                  >
+                    4
+                  </li>
+                  <li
+                    value={currentPage + 1}
+                    onClick={(event) => makeFiltration(event, "page")}
+                    className="fa fa-angle-right"
+                  />
                 </ul>
               </div>
             </div>
